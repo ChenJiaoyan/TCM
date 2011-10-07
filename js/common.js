@@ -1,23 +1,30 @@
 var site = "http://localhost/TCM";
-$(".edit_form :input").change(function() {
-     $(".edit_form").data("changed",true);
-});
 
+$(document).ready(function(){
+        $(".edit_form :input").change(function(){
+               	$(".edit_form").data("changed",true);
+        });
+});
 var editPage={
+	replace:function(data,sta_mes){
+		var tag = true;;
+		if($(".edit_form").data("changed")){
+			if(!confirm("您确定放弃吗？")){
+				tag=false;
+			}
+		}
+		if(tag){
+			$(".edit_form").html(data);
+               		$(".edit_form").data("changed",false);
+			$("#sta_content").html(sta_mes);
+		}
+	},
 	newArticle:function(){
 		$.post(site + "/includes/editPage.php?action=newArticle",function(data){
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{
-				if($("#edit_mess").html()!=null){
-					$("#content2").html(data);
-					$("#sta_content").html("新文章");
-				}else{
-					if(confirm("您确定放弃吗？")){
-						$("#content2").html(data);
-						$("#sta_content").html("新文章");
-					}
-				}
+				editPage.replace(data,'新文章');	
 			}	
 		});
 	},
@@ -26,15 +33,7 @@ var editPage={
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{
-				if($("#edit_mess").html()!=null){
-					$("#content2").html(data);
-					$("#sta_content").html(art_tit);
-				}else{
-					if(confirm("您确定放弃吗？")){
-						$("#content2").html(data);
-						$("#sta_content").html(art_tit);
-					}
-				}
+				editPage.replace(data,art_tit);	
 			}	
 		});
 	},
@@ -43,15 +42,7 @@ var editPage={
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{
-				if($("#edit_mess").html()!=null){
-					$("#content2").html(data);
-					$("#sta_content").html(art_tit+" | 第"+cha_num+"章");
-				}else{
-					if(confirm("您确定放弃吗？")){
-						$("#content2").html(data);
-						$("#sta_content").html(art_tit+" | 第"+cha_num+"章");
-					}
-				}
+				editPage.replace(data,art_tit+" | 第"+cha_num+"章");	
 			}	
 		});
 	},

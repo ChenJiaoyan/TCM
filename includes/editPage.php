@@ -50,10 +50,10 @@ switch ($type){
 		$art_id=0;
 		$published=1;
 		if($published==0){
-			$content= '<table id="article">
+			$content = '<table id="article">
 				<tr><td>文章编号：</td><td>'.$art_id.'<span>&nbsp&nbsp(草稿)</span></td></tr><tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text" value="'.$art_tit.'"></input></td></tr>';
 		}else{
-			$content= '<table id="article">
+			$content = '<table id="article">
 				<tr><td>文章编号：</td><td>'.$art_id.'<span>&nbsp&nbsp(已发布)</span></td></tr><tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text" value="'.$art_tit.'"></input></td></tr>';
 		}
 		$content .= '<tr id="acategory"><td class="lab_title">文章分类: </td><td><select><option value="Category1">医生</option><option value="Category2">患者</option><option value="Category3">机构</option></select></td></tr>
@@ -104,12 +104,11 @@ switch ($type){
 		$cha_num=$_REQUEST["cha_num"];
 		$art_id=0;
 		$published=1;
-		$content = '<form class=".edit_form">';
 		if($published==0){
-			$content .= '<table id="article">
+			$content = '<table id="article">
 				<tr><td>文章编号：</td><td>'.$art_id.'<span>&nbsp&nbsp(草稿)</span></td></tr><tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text" readonly="readonly" value="'.$art_tit.'"></input></td></tr></table>';
 		}else{
-			$content .= '<table id="article">
+			$content = '<table id="article">
 				<tr><td>文章编号：</td><td>'.$art_id.'<span>&nbsp&nbsp(已发布)</span></td></tr><tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text" readonly="readonly" value="'.$art_tit.'"></input></td></tr></table>';
 		}
 		$content .= '
@@ -123,7 +122,6 @@ switch ($type){
 				<table id="edit_button">';
 		$content .= '<tr><td><input type="button" value="保存" onclick="dbAction.saveArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveup()"></input></td></tr>
 			</table>';
-		$content .= '</form>';
 		echo $content;
 		break;
 }

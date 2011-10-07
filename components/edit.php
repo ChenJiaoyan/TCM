@@ -14,12 +14,14 @@
     <div id="content">
 	<div class="border"></div>
 	<div id="content2">
+	<form class="edit_form">
 	<div id="edit_mess">
 	<p style="font-size:20px;">欢迎编辑您的文章!</p>
 	<br/>
 	<p>选择左侧导航编辑您已有文章!</p>
 	<p><a href="javascript:editPage.newArticle()">增加新文章</a></p>
 	</div>
+	</form>
 	</div>
     </div>
   </div>
