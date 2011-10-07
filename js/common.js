@@ -1,9 +1,7 @@
 var site = "http://localhost/TCM";
 
 $(document).ready(function(){
-        $(".edit_form :input").change(function(){
-               	$(".edit_form").data("changed",true);
-        });
+        $(".edit_form").data("changed",false);
 });
 var editPage={
 	replace:function(data,sta_mes){
@@ -16,6 +14,9 @@ var editPage={
 		if(tag){
 			$(".edit_form").html(data);
                		$(".edit_form").data("changed",false);
+        		$(".edit_form :input").change(function(){
+               			$(".edit_form").data("changed",true);
+        		});
 			$("#sta_content").html(sta_mes);
 		}
 	},
