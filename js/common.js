@@ -3,6 +3,24 @@ var site = "http://localhost/TCM";
 $(document).ready(function(){
         $(".edit_form").data("changed",false);
 });
+
+
+
+function isDate(){
+	var tag = true;
+	 var str = $("#art_date").val();
+	 var a = str.match(/^(\d{0,4})-(\d{0,2})-(\d{0,2})$/);
+	 if (a == null){
+	 	tag = false;
+	 }else if ( a[2]>=13 || a[3]>=32 || a[4]>=24){
+	 	tag = false;
+	 }
+	 if(!tag){
+	 	$("#art_date_error").html("&nbsp&nbsp(时间格式有误)");
+	 }
+}
+
+
 var editPage={
 	replace:function(data,sta_mes){
 		var tag = true;;
@@ -49,9 +67,15 @@ var editPage={
 	},
 	giveup:function(){
 		//重新读出文章
-		tag = confirm("您确定放弃吗？");
+		var tag = true;
+		if($(".edit_form").data("changed")){
+			if(!confirm("您确定放弃吗？")){
+				tag = false;
+			}
+		}
 		if(tag){
-			$("#content2").html('<div id="edit_mess"><p style="font-size:20px;">欢迎编辑您的文章!</p><br/><p>选择左侧导航编辑您已有文章!</p><p><a href="javascript:editPage.newArticle()">增加新文章</a></p></div>');
+			$(".edit_form").html('<div id="edit_mess"><p style="font-size:20px;">欢迎编辑您的文章!</p><br/><p>选择左侧导航编辑您已有文章!</p><p><a href="javascript:editPage.newArticle()">增加新文章</a></p></div>');
+			$(".edit_form").data("changed",false);
 		}
 	},
 	addAuthor:function(){
@@ -123,8 +147,13 @@ var editPage={
 	},
 };
 var dbAction={
-	saveArticle:function(tag){
-		alert(tag);
+	saveArticle:function(published){
+		var art_title = $("#atitle input").val();
+		var art_categroy = $("#acategory select").val();
+		var art_date = $("#adate input").val();
+		var art_abstract = $("#abstract textarea").val();
+	//	$(".authorl input:eq(3)").val()
+		alert(published);
 	},
 	saveChapter:function(){
 	},

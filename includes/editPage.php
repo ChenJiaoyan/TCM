@@ -8,8 +8,8 @@ switch ($type){
 	case "newArticle";
 		echo '<table id="article">
 			<tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text"></input></td></tr>
-			<tr id="acategory"><td class="lab_title">文章分类: </td><td><select><option value="Category1">医生</option><option value="Category2">患者</option><option value="Category3">机构</option></select></td></tr>
-			<tr id="adate"><td class="lab_title">完成日期: </td><td><input type="text" id="year"></input>年<input type="text" id="month"></input>月<input type="text" id="day"></input>日</td></tr>
+			<tr id="acategory"><td class="lab_title">文章分类: </td><td><select><option value="医生">医生</option><option value="患者">患者</option><option value="机构">机构</option></select></td></tr>
+			<tr id="adate"><td class="lab_title">完成日期: </td><td><input id="art_date" value="0000-00-00" onmouseout="isDate()"></input><span id="art_date_error"></span></td></tr>
 			</table>
 			<hr/>
 			<br/>
@@ -56,8 +56,8 @@ switch ($type){
 			$content = '<table id="article">
 				<tr><td>文章编号：</td><td>'.$art_id.'<span>&nbsp&nbsp(已发布)</span></td></tr><tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text" value="'.$art_tit.'"></input></td></tr>';
 		}
-		$content .= '<tr id="acategory"><td class="lab_title">文章分类: </td><td><select><option value="Category1">医生</option><option value="Category2">患者</option><option value="Category3">机构</option></select></td></tr>
-			<tr id="adate"><td class="lab_title">完成日期: </td><td><input type="text" id="year"></input>年<input type="text" id="month"></input>月<input type="text" id="day"></input>日</td></tr>
+		$content .= '<tr id="acategory"><td class="lab_title">文章分类: </td><td><select><option value="医生">医生</option><option value="患者">患者</option><option value="机构">机构</option></select></td></tr>
+			<tr id="adate"><td class="lab_title">完成日期: </td><td><input id="art_date" value="0000-00-00" onmouseout="isDate()"></input><span id="art_date_error"></span></td></tr>
 			</table>
 			<hr/>
 			<br/>
