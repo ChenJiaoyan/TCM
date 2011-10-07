@@ -1,4 +1,8 @@
 var site = "http://localhost/TCM";
+$(".edit_form :input").change(function() {
+     $(".edit_form").data("changed",true);
+});
+
 var editPage={
 	newArticle:function(){
 		$.post(site + "/includes/editPage.php?action=newArticle",function(data){
