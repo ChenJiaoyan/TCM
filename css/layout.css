@@ -1,15 +1,19 @@
-/*本模板是由标准之路(www.aa25.cn)的×××制作完成*/
-/*本人水平有限，使用自愿，不对因使用此模板造成的任何后果负任何责任*/
-/*如果您想转载此资源，请保留“<a href="http://www.aa25.cn">标准之路www.aa25.cn</a>”的链接及版权标识*/
-/*如有更好的建议或意见，请到www.aa25.cn留言，本人尽力解决*/
+/*卤戮脛拢掳氓脢脟脫脡卤锚脳录脰庐脗路(www.aa25.cn)碌脛隆脕隆脕隆脕脰脝脳梅脥锚鲁脡*/
+/*卤戮脠脣脣庐脝陆脫脨脧脼拢卢脢鹿脫脙脳脭脭赂拢卢虏禄露脭脪貌脢鹿脫脙麓脣脛拢掳氓脭矛鲁脡碌脛脠脦潞脦潞贸鹿没赂潞脠脦潞脦脭冒脠脦*/
+/*脠莽鹿没脛煤脧毛脳陋脭脴麓脣脳脢脭麓拢卢脟毛卤拢脕么隆掳<a href="http://www.aa25.cn">卤锚脳录脰庐脗路www.aa25.cn</a>隆卤碌脛脕麓陆脫录掳掳忙脠篓卤锚脢露*/
+/*脠莽脫脨赂眉潞脙碌脛陆篓脪茅禄貌脪芒录没拢卢脟毛碌陆www.aa25.cn脕么脩脭拢卢卤戮脠脣戮隆脕娄陆芒戮枚*/
 /*2008-8-28*/
 body { font-family:Verdana; font-size:14px; margin:0;}
 
 #container {margin:0 auto; width:100%;}
 #header { height:100px; background:#9c6; margin-bottom:5px;}
-#menu { height:30px; background:#693; margin-bottom:5px;}
+#menu { height:35px; background:url(../images/menu_back.png); margin-bottom:5px; overflow:hidden; padding:0 0 0 20px;}
+#menu ul {list-style:none; height:35px;line-height:35px;padding:0 8px 1px;border-radius:30px;box-shadow:0 1px 3px rgba(0;0,0,0,4);}
+#menu ul li{display:inline-block;margin:0.5px;}
+#menu ul li a{ color:#fff; font-weight:bold;font-family:Arial, Helvetica, sans-serif;font-size:12px;padding:5px 15px;text-decoration:none;text-shadow:0 1px 1px rgba(0,0,0,0.3);}
+#menu ul li a#curr, #menu ul li a:hover{ border-radius:20px;background-color:#666;box-shadow:0 1px 1px rgba(0,0,0,0.2);border-top:1px solid #f8f8f8;}
 #mainContent {margin-bottom:5px;}
-#sidebar { float:left; width:200px;background:#cf9;}
-#content { margin-left:205px !important; margin-left:202px; height:auto !important; height:100px; background:#ffa;}/*当content设定高度后，3像素会跑到content外侧，这样，我们用!important修正在ie下向左多浮动2像素，加上3像素的bug正好是5像素，所以在火狐和IE下显示是一样的*/
-#footer { height:60px; background:#9c6;}
+#sidebar { float:left; width:200px;background:#fff;}
+#content { margin-left:205px !important; margin-left:202px; height:auto !important; height:100px; background:#ffa;}/*碌卤content脡猫露篓赂脽露脠潞贸拢卢3脧帽脣脴禄谩脜脺碌陆content脥芒虏脿拢卢脮芒脩霉拢卢脦脪脙脟脫脙!important脨脼脮媒脭脷ie脧脗脧貌脳贸露脿赂隆露炉2脧帽脣脴拢卢录脫脡脧3脧帽脣脴碌脛bug脮媒潞脙脢脟5脧帽脣脴拢卢脣霉脪脭脭脷禄冒潞眉潞脥IE脧脗脧脭脢戮脢脟脪禄脩霉碌脛*/
+#footer { height:35px; background:url(../images/menu_back.png);}
 .clearfloat { clear:both; height:0; font-size: 1px; line-height: 0px;}
