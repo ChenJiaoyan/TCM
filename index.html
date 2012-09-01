@@ -5,13 +5,21 @@
 <title>TCM</title>
 <link href="css/layout.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-
 </head>
 
 <body>
 <div id="container">
-  <div id="header">This is the Header</div>
-  <br class="clearfloat" />
+  <div id="header">
+  <div id="searchbox">
+    <input id="txtSearch" type="text" name="search" maxlength="200" value="" autocomplete="off">
+    <select id="optionSearch">
+	<option value="Category1">Category1</option>
+	<option value="Category2">Category2</option>
+	<option value="Category3">Category3</option>
+    </select>
+    <span id="search_submit">Search</span>
+    </div>
+  </div>
   <div id="menu">
   <ul>
     <li id="category1" class="current"><a href="">Category1</a></li>
