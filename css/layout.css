@@ -6,7 +6,7 @@
 body { font-family:Verdana; font-size:14px; margin:0;}
 
 #container {margin:0 auto; width:100%;}
-#header { height:80px; background:#9c6;}
+#header { height:80px; background:#9c6;background:url(../images/header_back.png);}
 #header #headright{ float:right; width:30%; height:90%;}
 #header #searchbox{ float:left;height:35px;padding:7px 5px 5px 5px;margin-top:25px;margin-left:15px;}
 #header #searchbox #txtSearch{ height:20px;}
