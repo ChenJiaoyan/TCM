@@ -18,7 +18,7 @@ body { font-family:Verdana; font-size:14px; margin:0;}
 #menu ul li{display:inline-block;margin:0.5px;}
 #menu ul li a{ color:#fff; font-weight:bold;font-family:Arial, Helvetica, sans-serif;font-size:12px;padding:5px 15px;text-decoration:none;text-shadow:0 1px 1px rgba(0,0,0,0.3);}
 #menu ul li a#curr, #menu ul li a:hover{ border-radius:20px;background-color:#666;box-shadow:0 1px 1px rgba(0,0,0,0.2);border-top:1px solid #f8f8f8;}
-#mainContent {margin-bottom:5px;width:1400px;}
+#mainContent {margin-bottom:5px;width:90%;}
 #mainContent .border{width:100%;height:10px;background:url(../images/border.gif);}
 #mainContent #status{height:23px;width:100%;position:relative;padding:0 20px;top:2px;}
 #mainContent #status a{font-size:15px;}
