@@ -23,3 +23,5 @@ code {font-family:"Courier New",Courier}
 #nested .acc-section {overflow:hidden; background:#fff}
 #nested .acc-content {width:171px; padding:0px;border-top:none; background:#fff}
 #nested .acc-selected {background:url(../images/header_over.gif)}
+/*--liuna--*/
+#footer table td{vertical-align:middle; text-align:center}
