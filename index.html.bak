@@ -10,8 +10,7 @@
 <body>
 <div id="container">
   <div id="header">
-  <div id="headerleft">
-  </div>
+  <div id="logo">
   <div id="headright">
   <div id="utility">
     <ul>
@@ -28,6 +27,7 @@
 	<option value="Category3">Category3</option>
     </select>
     <span id="search_submit">Search</span>
+  </div>
   </div>
   </div>
   </div>
