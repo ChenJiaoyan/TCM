@@ -27,5 +27,5 @@ body { font-family:Verdana; font-size:14px; margin:0;}
 #sidebar { float:left; width:205px;background:#fff;}
 #content { margin-left:205px !important; margin-left:202px; height:auto !important; height:100px; background:#ffa; background:white;}/*µ±contentÉè¶¨¸ß¶Èºó£¬3ÏñËØ»áÅÜµ½contentÍâ²à£¬ÕâÑù£¬ÎÒÃÇÓÃ!importantÐÞÕýÔÚieÏÂÏò×ó¶à¸¡¶¯2ÏñËØ£¬¼ÓÉÏ3ÏñËØµÄbugÕýºÃÊÇ5ÏñËØ£¬ËùÒÔÔÚ»ðºüºÍIEÏÂÏÔÊ¾ÊÇÒ»ÑùµÄ*/
 #content #content2{ padding: 5px 10px 5px 10px;border-left-color: #DDDDDD;border-left-style: groove;border-left-width: 5px;}
-#footer { height:35px; background:url(../images/menu_back.png);}
+#footer { height:35px; background:url(../images/footer_back.png);}
 .clearfloat { clear:both; height:0; font-size: 1px; line-height: 0px;}
