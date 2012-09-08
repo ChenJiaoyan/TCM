@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TCM</title>
+<link href="css/layout.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="container">
+  <div id="header">
+  <div id="headerleft">
+  </div>
+  <div id="headright">
+  <div id="utility">
+    <ul>
+    <a href="">登陆</a> | 
+    <a href="">关于</a> | 
+    <a href="">帮助</a>
+    </ul>
+  </div>
+  <div id="searchbox">
+    <input id="txtSearch" type="text" name="search" maxlength="200" value="" autocomplete="off">
+    <select id="optionSearch">
+	<option value="Category1">医生</option>
+	<option value="Category2">患者</option>
+	<option value="Category3">机构</option>
+    </select>
+    <span id="search_submit">Search</span>
+  </div>
+  </div>
+  </div>
+  <div id="menu">
+  <ul>
+    <li id="category1" class="current"><a href="">医生</a></li>
+    <li id="category2"><a href="">患者</a></li>
+    <li id="category3"><a href="">机构</a></li>
+  </ul>
+  </div>
+  <div id="mainContent">
+    <div id="status">
+    	<span>您正在编辑文章</span>&nbsp&nbsp|&nbsp&nbsp
+	<a href="">第一篇文章</a>  >> 
+	<a href="">第一章</a>    
+    </div>
+    <div id="sidebar">
+	<div class="border"></div>
+ <!--   	<a href="javascript:parentAccordion.pr(1)">Exand All</a> | <a href="javascript:parentAccordion.pr(-1)">Collapse All</a>
+-->
+    	<ul class="acc" id="acc">
+
+    	<li>
+    	<h3>第一篇文章</h3>
+    	 <div class="acc-section">
+    	 <div class="acc-content">
+    	 <ul class="acc" id="nested">
+    	 	<li>
+    	 	<h4><a href="">第一章</a></h4>
+    	 	<div class="acc-section">
+    	 	<div>
+    	 	</li>
+    	 	<li>
+    	 	<h4><a href="">第二章</a></h4>
+    	 	<div class="acc-section">
+    	 	<div class="acc-content">
+    	 	<div>
+    	 	</li>
+    	 </ul>
+    	</div>
+    	</div>
+    	</li>
+
+
+   	<li>
+   	<h3>第二篇文章</h3>
+    	<div class="acc-section">
+     	<div class="acc-content">
+     	<ul class="acc" id="nested">
+     	<li>
+     	<h4><a href="">第一章</a></h4>
+     	<div class="acc-section">
+     	<div>
+     	</li>
+    	</ul>
+   	</div>
+    	</div>
+    	</li>
+
+    </ul>
+    <span><a href="">新增文章</a></span>
+    </div>
+    <div id="content">
+	<div class="border"></div>
+	<div id="content2">
+	<table>
+	<tr><td>文章题目: </td><td><input type="text"></input></td></tr>
+	<tr><td>分类: </td><td><select><option value="Category1">医生</option><option value="Category2">患者</option><option value="Category3">机构</option></select></td></tr>
+	</table>
+	<hr/>
+	<table>
+	<tr><td>作者1</td><td>姓名: </td><td><input type="text"></input></td><td>邮箱: </td><td><input type="text"></input></td><td><input type="button" value="删除"></input></td></tr>
+	<tr><td>作者2</td><td>姓名: </td><td><input type="text"></input></td><td>邮箱: </td><td><input type="text"></input></td><td><input type="button" value="删除"></input></td></tr>
+	<tr><td>作者3</td><td>姓名: </td><td><input type="text"></input></td><td>邮箱: </td><td><input type="text"></input></td><td><input type="button" value="删除"></input></td></tr>
+	<tr><td><input type="button" value="增加作者" onclick=""></input></td></tr>
+	</table>
+	<hr/>
+	<table>
+	<tr><td>关键字1: </td><td><input type="text"></input></td><td><input type="button" value="删除"></input></td></tr>
+	<tr><td>关键字2: </td><td><input type="text"></input></td><td><input type="button" value="删除"></input></td></tr>
+	<tr><td>关键字3: </td><td><input type="text"></input></td><td><input type="button" value="删除"></input></td></tr>
+	<tr><td><input type="button" value="增加关键字" onclick=""></input></td></tr>
+	</table>
+	<hr/>
+	<table>
+	<table>
+	<tr><td>摘要: </td></tr>
+	<tr><td><textarea></textarea></td></tr>
+	<tr></tr>
+	</table>
+	<hr/>
+	<table>
+	<tr><td>第一章</td></tr>
+	<tr><td>标题: </td><td><input type="text"></input></td></tr>
+	<tr><td>内容: </td></tr>
+	<tr><td><textarea></textarea></td></tr>
+	</table>
+	<table>
+	<tr><td><input type="button" value="上移"></input></td><td><input type="button" value="下移"></input></td><td><input type="button" value="增加"></input></td><td><input type="button" value="删除"></input></td></tr>
+	</table>
+	<hr/>
+	<table>
+	<tr><td>上传pdf文件</td></tr>
+	</table>
+	<hr/>
+	<table>
+	<tr><td><input type="button" value="预览"></input></td><td><input type="button" value="保存至草稿箱"></input></td><td><input type="button" value="保存并发布"></input></td><td><input type="button" value="放弃"></input></td></tr>
+	</table>
+	</div>
+    </div>
+  </div>
+  <br class="clearfloat" />
+  <div id="footer">
+  	<table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+    	<tr>
+        	<td>
+        	中国中医科学院中医药信息研究所 © 版权所有　京ICP备05055726号 京公网安备：110402450013
+            </br>
+            地址：中国·北京市东直门内南小街16号　邮编: 100700
+            </td>
+        </tr>
+    </table>
+  </div>
+</div>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript">
+var parentAccordion=new TINY.accordion.slider("parentAccordion");
+parentAccordion.init("acc","h3",1,0,"acc-red-selected");
+</script>
+</body>
+</html>
