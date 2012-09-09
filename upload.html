@@ -93,40 +93,36 @@
     <div id="content">
 	<div class="border"></div>
 	<div id="content2">
-	<table>
-	<tr><td>文章题目: </td><td><input type="text"></input></td></tr>
-	<tr><td>分类: </td><td><select><option value="Category1">医生</option><option value="Category2">患者</option><option value="Category3">机构</option></select></td></tr>
+	<table id="article">
+	<tr id="atitle"><td>文章题目: </td><td><input type="text"></input></td></tr>
+	<tr id="acategory"><td>分类: </td><td><select><option value="Category1">医生</option><option value="Category2">患者</option><option value="Category3">机构</option></select></td></tr>
+	<tr id="adate"><td>时间: </td><td><input type="text"></input></td></tr>
 	</table>
 	<hr/>
-	<table>
-	<tr><td>作者1</td><td>姓名: </td><td><input type="text"></input></td><td>邮箱: </td><td><input type="text"></input></td><td><input type="button" value="删除"></input></td></tr>
-	<tr><td>作者2</td><td>姓名: </td><td><input type="text"></input></td><td>邮箱: </td><td><input type="text"></input></td><td><input type="button" value="删除"></input></td></tr>
-	<tr><td>作者3</td><td>姓名: </td><td><input type="text"></input></td><td>邮箱: </td><td><input type="text"></input></td><td><input type="button" value="删除"></input></td></tr>
-	<tr><td><input type="button" value="增加作者" onclick=""></input></td></tr>
+	<table id="author">
+	<tr class="authorl"><td>作者1</td><td>姓名: </td><td><input class="authorn" type="text"></input></td><td>邮箱: </td><td><input class="authorm" type="text"></input></td><td><input class="authord" type="button" value="删除"></input></td></tr>
+	<tr class="addauthor"><td><input type="button" value="增加作者" onclick=""></input></td></tr>
 	</table>
 	<hr/>
-	<table>
-	<tr><td>关键字1: </td><td><input type="text"></input></td><td><input type="button" value="删除"></input></td></tr>
-	<tr><td>关键字2: </td><td><input type="text"></input></td><td><input type="button" value="删除"></input></td></tr>
-	<tr><td>关键字3: </td><td><input type="text"></input></td><td><input type="button" value="删除"></input></td></tr>
-	<tr><td><input type="button" value="增加关键字" onclick=""></input></td></tr>
+	<table id="key">
+	<tr class="keyl"><td>关键字1: </td><td><input class="keyinput" type="text"></input></td><td><input class="keydel" type="button" value="删除"></input></td></tr>
+	<tr class="addkey"><td><input type="button" value="增加关键字" onclick=""></input></td></tr>
 	</table>
 	<hr/>
-	<table>
 	<table>
 	<tr><td>摘要: </td></tr>
-	<tr><td><textarea></textarea></td></tr>
+	<tr><td><textarea rows="5" cols="90"></textarea></td></tr>
 	<tr></tr>
 	</table>
 	<hr/>
-	<table>
-	<tr><td>第一章</td></tr>
-	<tr><td>标题: </td><td><input type="text"></input></td></tr>
-	<tr><td>内容: </td></tr>
-	<tr><td><textarea></textarea></td></tr>
+	<table class="chapter" id="chapter1">
+	<tr class="cnum"><td>第一章</td></tr>
+	<tr class="ctitle"><td>标题:&nbsp<input type="text"></input></td></tr>
+	<tr class="ccont"><td>内容: </td></tr>
+	<tr class="ccontent"><td><textarea rows="10" cols="120"></textarea></td></tr>
 	</table>
-	<table>
-	<tr><td><input type="button" value="上移"></input></td><td><input type="button" value="下移"></input></td><td><input type="button" value="增加"></input></td><td><input type="button" value="删除"></input></td></tr>
+	<table id="chap_button">
+	<tr><td><input class="chap_up" type="button" value="上移"></input></td><td><input class="chap_down" type="button" value="下移"></input></td><td><input class="chap_add" type="button" value="增加"></input></td><td><input class="chap_del" type="button" value="删除"></input></td></tr>
 	</table>
 	<hr/>
 	<table>
