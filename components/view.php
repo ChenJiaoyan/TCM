@@ -9,66 +9,8 @@
 	<div class="border"></div>
  <!--   	<a href="javascript:parentAccordion.pr(1)">Exand All</a> | <a href="javascript:parentAccordion.pr(-1)">Collapse All</a>
 -->
-    	<ul class="acc" id="acc">
+	<?php include_once(dirname(__FILE__)."/../includes/sidebar.php")?>
 
-    	<li>
-    	<h3>Wigs</h3>
-    	 <div class="acc-section">
-    	 <div class="acc-content">
-    	 <ul class="acc" id="nested">
-    	 	<li>
-    	 	<h4><a href="">Length</a></h4>
-    	 	<div class="acc-section">
-    	 	<div class="acc-content">
-    	 	<ul>
-    	 	<li><a href="">Short Wigs</a></li>
-    	 	<li><a href="">Medium Wigs </a></li>
-    	 	<li><a href="">Long Wigs </a></li>
-    	 	</ul>
-    	 	</div>
-    	 	<div>
-    	 	</li>
-    	 	<li>
-    	 	<h4><a href="">Width</a></h4>
-    	 	<div class="acc-section">
-    	 	<div class="acc-content">
-    	 	<ul>
-    	 	<li><a href="">short Width</a></li>
-    	 	<li><a href="">Medium Wigs </a></li>
-    	 	<li><a href="">Long Wigs </a></li>
-    	 	</ul>
-    	 	</div>
-    	 	<div>
-    	 	</li>
-    	 </ul>
-    	</div>
-    	</div>
-    	</li>
-
-
-   	<li>
-   	<h3>Wigs</h3>
-    	<div class="acc-section">
-     	<div class="acc-content">
-     	<ul class="acc" id="nested">
-     	<li>
-     	<h4><a href="">Length</a></h4>
-     	<div class="acc-section">
-     	<div class="acc-content">
-     	<ul>
-     	<li><a href="">Short Wigs</a></li>
-     	<li><a href="">Medium Wigs </a></li>
-     	<li><a href="">Long Wigs </a></li>
-     	</ul>
-     	</div>
-     	<div>
-     	</li>
-    	</ul>
-   	</div>
-    	</div>
-    	</li>
-
-    </ul>
     </div>
     <div id="content">
 	<div class="border"></div>
