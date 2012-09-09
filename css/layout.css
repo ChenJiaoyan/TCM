@@ -34,3 +34,30 @@ body { font-family:Verdana; font-size:14px; margin:0;}
 #content #content2{ padding: 5px 10px 5px 10px;border-left-color: #DDDDDD;border-left-style: groove;border-left-width: 5px;}
 #content #content2 #edit_mess{margin-top:50px;margin-left:50px;height:200px;}
 #footer { height:45px; background:url(../images/menu_back.png);}
+
+
+#article {width:80%;}
+#article .lab_title {width:80px;}
+#article #atitle input{width:90%;}
+
+#author {width:80%;}
+#author .lab_a{width:80px;}
+#author .lab_n{width:40px;}
+#author .input_n .authorn{width:80%;}
+#author .lab_m{width:40px;}
+#author .input_m .authorm{width:80%;}
+
+#key {width:80%;}
+#key .tag_k{width:80px;}
+#key .input_k{width:300px;}
+#key .input_k input{width:250px;}
+
+#abstract {width:100%;}
+#abstract #tag_a{width:80px;}
+
+.chapter {width:100%;}
+.chapter .ctitle input{width:70%;}
+.chapter .ctitle #chapter_t{width:80px;}
+.chapter .ctitle #chapter_c{width:80px;}
+
+#edit_button input{margin-right:10px;}
