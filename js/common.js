@@ -45,5 +45,13 @@ var editPage={
 			var str2 = "editPage.delKey("+i+")";
 			$(".keydel").eq(i).attr("onclick",str2);
 		}
-	}
+	},
+	addChapter:function(){
+		var len=$(".cnum").length;
+		var str="第"+(len+1)+"章";
+		var tr = '<tr class="cnum"><td>'+ str +'</td></tr><tr class="ctitle"><td id="chapter_t">标题:</td><td><input type="text"></input></td></tr><tr class="ccont"><td id="chapter_c">内容: </td><td><textarea rows="10" cols="100"></textarea></td></tr><tr><td><input class="chap_up" type="button" value="上移"></input>&nbsp<input class="chap_down" type="button" value="下移"></input></td><td><input class="chap_add" type="button" value="增加" onclick="editPage.addChapter();"></input>&nbsp<input class="chap_del" type="button" value="删除" onclick="editPage.delChapter(' + len + ');"></input></td></tr><tr><td></br></td></tr>'
+		$(".chapter tbody").append(tr);
+	},
+	delChapter:function(index){
+	},
 };
