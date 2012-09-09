@@ -39,6 +39,9 @@ body { font-family:Verdana; font-size:14px; margin:0;}
 #article {width:80%;}
 #article .lab_title {width:80px;}
 #article #atitle input{width:90%;}
+#article #adate #year{width:60px;}
+#article #adate #month{width:40px;}
+#article #adate #day{width:40px;}
 
 #author {width:80%;}
 #author .lab_a{width:80px;}
