@@ -34,9 +34,13 @@
   </div>
   </div>
   <div id="menu">
-  <ul>
+  <ul id="menu_cat">
     <li id="category1" class="current"><a href="">医生</a></li>
     <li id="category2"><a href="">患者</a></li>
     <li id="category3"><a href="">机构</a></li>
+  </ul>
+  <ul id="menu_action">
+    <li id="view"><a href="index.php?action=view">阅读</a></li>
+    <li id="edit"><a href="index.php?action=edit">编辑</a></li>
   </ul>
   </div>
