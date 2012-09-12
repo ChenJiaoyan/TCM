@@ -46,12 +46,34 @@ var editPage={
 			$(".keydel").eq(i).attr("onclick",str2);
 		}
 	},
-	addChapter:function(){
+	addChapter:function(index){
+		var str="第"+(index+2)+"章";
+		var tr = '<tr class="cnum"><td class="tag_ch">'+ str +'</td></tr><tr class="ctitle"><td id="chapter_t">标题:</td><td><input type="text"></input></td></tr><tr class="ccont"><td id="chapter_c">内容: </td><td><textarea rows="10" cols="100"></textarea></td></tr><tr><td><input class="chap_up" type="button" value="上移"></input>&nbsp<input class="chap_down" type="button" value="下移"></input></td><td><input class="chap_add" type="button" value="增加" onclick="editPage.addChapter(' + (index+1) + ');"></input>&nbsp<input class="chap_del" type="button" value="删除" onclick="editPage.delChapter(' + (index+1) + ');"></input></td></tr><tr><td></br></td></tr>';
+		$("#chapter").children().children().eq(index*5+4).after(tr);
 		var len=$(".cnum").length;
-		var str="第"+(len+1)+"章";
-		var tr = '<tr class="cnum"><td>'+ str +'</td></tr><tr class="ctitle"><td id="chapter_t">标题:</td><td><input type="text"></input></td></tr><tr class="ccont"><td id="chapter_c">内容: </td><td><textarea rows="10" cols="100"></textarea></td></tr><tr><td><input class="chap_up" type="button" value="上移"></input>&nbsp<input class="chap_down" type="button" value="下移"></input></td><td><input class="chap_add" type="button" value="增加" onclick="editPage.addChapter();"></input>&nbsp<input class="chap_del" type="button" value="删除" onclick="editPage.delChapter(' + len + ');"></input></td></tr><tr><td></br></td></tr>'
-		$(".chapter tbody").append(tr);
+		var i;
+		for(i=index+2;i<len;i++){
+			var str = "第" + (i+1) + "章";
+			$(".tag_ch").eq(i).html(str);
+			var str2 = "editPage.delChapter("+i+")";
+			$(".chap_del").eq(i).attr("onclick",str2);
+			var str3 = "editPage.addChapter("+i+")";
+			$(".chap_add").eq(i).attr("onclick",str3);
+		}
 	},
 	delChapter:function(index){
+		var i;
+		for(i=0;i<5;i++){
+			$("#chapter").children().children().eq(index*5).remove();	
+		}
+		var len=$(".cnum").length;
+		for(i=index;i<len;i++){
+			var str = "第" + (i+1) + "章";
+			$(".tag_ch").eq(i).html(str);
+			var str2 = "editPage.delChapter("+i+")";
+			$(".chap_del").eq(i).attr("onclick",str2);
+			var str3 = "editPage.addChapter("+i+")";
+			$(".chap_add").eq(i).attr("onclick",str3);
+		}
 	},
 };
