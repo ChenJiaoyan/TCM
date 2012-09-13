@@ -61,9 +61,9 @@ body { font-family:Verdana; font-size:14px; margin:0;}
 #abstract {width:100%;}
 #abstract #tag_a{width:80px;}
 
-.chapter {width:100%;}
-.chapter .ctitle input{width:70%;}
-.chapter .ctitle #chapter_t{width:80px;}
-.chapter .ctitle #chapter_c{width:80px;}
+#chapter {width:100%;}
+#chapter .ctitle input{width:70%;}
+#chapter .ctitle #chapter_t{width:80px;}
+#chapter .ctitle #chapter_c{width:80px;}
 
 #edit_button input{margin-right:10px;}
