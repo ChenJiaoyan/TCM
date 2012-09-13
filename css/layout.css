@@ -17,16 +17,53 @@ body { font-family:Verdana; font-size:14px; margin:0;}
 #menu { width:100%;height:35px; background:url(../images/menu_back.png); margin-bottom:5px; overflow:hidden; }
 #menu ul {list-style:none; height:35px;line-height:35px;padding:0 8px 1px;border-radius:30px;box-shadow:0 1px 3px rgba(0;0,0,0,4);}
 #menu ul li{display:inline-block;margin:0.5px;}
-#menu ul li a{ color:#fff; font-weight:bold;font-family:Arial, Helvetica, sans-serif;font-size:12px;padding:5px 15px;text-decoration:none;text-shadow:0 1px 1px rgba(0,0,0,0.3);}
+#menu ul li a{ color:#fff; font-weight:bold;font-family:Arial, Helvetica, sans-serif;font-size:17px;padding:5px 15px;text-decoration:none;text-shadow:0 1px 1px rgba(0,0,0,0.3);}
 #menu ul li a#curr, #menu ul li a:hover{ border-radius:20px;background-color:#666;box-shadow:0 1px 1px rgba(0,0,0,0.2);border-top:1px solid #f8f8f8;}
+#menu #menu_cat{float:left;}
+#menu #menu_action{float:right;}
+#menu #menu_action li a{float:right;font-size:13px;}
 #mainContent {margin-bottom:5px;width:100%;}
 #mainContent .border{width:100%;height:10px;background:url(../images/border.gif);}
-#mainContent #status{height:23px;width:95%;padding:0 20px;top:2px;}
+#mainContent #status{height:23px;width:100%;position:relative;padding:0 20px;top:2px;}
 #mainContent #status a{font-size:15px;}
+#mainContent #status span{font-size:15px;}
+#mainContent #content {position:relative;}
 #sidebar { float:left; width:15%;background:#fff;}
+#sidebar span{ float:right; margin-right:10px;}
 #content { float:left; width:70%; background:#ffa; background:white;}
 #content #content2{padding: 5px 10px 5px 10px;border-left-color: #DDDDDD;border-left-style: groove;border-left-width: 5px;border-right-color: #DDDDDD;border-right-style: groove;border-right-width: 5px;}
+#content #content2 #edit_mess{margin-top:50px;margin-left:50px;height:200px;}
 #sidebar2 {float:left; width:15%;background:#fff;}
 #sidebar2 #side2Content{padding: 10px 5px 5px 8px;}
 .clearfloat {clear:both}
 #footer { height:45px; background:url(../images/menu_back.png);}
+
+
+#article {width:80%;}
+#article .lab_title {width:80px;}
+#article #atitle input{width:90%;}
+#article #adate #year{width:60px;}
+#article #adate #month{width:40px;}
+#article #adate #day{width:40px;}
+
+#author {width:80%;}
+#author .lab_a{width:80px;}
+#author .lab_n{width:40px;}
+#author .input_n .authorn{width:80%;}
+#author .lab_m{width:40px;}
+#author .input_m .authorm{width:80%;}
+
+#key {width:80%;}
+#key .tag_k{width:80px;}
+#key .input_k{width:300px;}
+#key .input_k input{width:250px;}
+
+#abstract {width:100%;}
+#abstract #tag_a{width:80px;}
+
+.chapter {width:100%;}
+.chapter .ctitle input{width:70%;}
+.chapter .ctitle #chapter_t{width:80px;}
+.chapter .ctitle #chapter_c{width:80px;}
+
+#edit_button input{margin-right:10px;}
