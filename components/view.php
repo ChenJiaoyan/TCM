@@ -34,7 +34,8 @@
     <div id="sidebar2">
   	<div class="border"></div>
     	<div id="side2Content">
-        	<h2 style="font-size:20px; font-weight:bold; text-align:center;">相关知识介绍</h2></br>
+		
+        	<h2 style="font-size:20px; font-weight:bold; text-align:left;">关键字</h2></br>
 			<p>大麻（學名：Cannabis sativa），又稱尋常大麻，又名線麻、白麻，中國古稱漢麻、火麻、枲、苴，大麻科大麻属一年生草本植物。生長地區包括在亞洲的吉爾吉斯坦、阿富汗，中國部分地區、印度和尼泊爾，以及歐洲的匈牙利、波蘭、保加利亞等地。
 			</p><br/>
 			<p>人類長久以來，種植這種草本植物，作為工業纖維，植物油脂、宗教用途以及藥用之上。它的種子，被稱為火麻仁或大麻仁，中醫使用它來治療便秘、腹瀉，可以被用來作成大麻籽油（Hemp oil）
