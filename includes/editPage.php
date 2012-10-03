@@ -26,7 +26,7 @@ switch ($type){
 			<hr/>
 			<br/>
 			<table id="abstract">
-			<tr><td id="tag_a">摘要:</td><td><textarea rows="5" cols="100"></textarea></td></tr>
+			<tr><td id="tag_a">摘要:</td><td><textarea rows="5" cols="80"></textarea></td></tr>
 			<tr></tr>
 			</table>
 			<hr/>
@@ -34,7 +34,7 @@ switch ($type){
 			<table id="chapter">
 			<tr class="cnum"><td class="tag_ch">第1章</td></tr>
 			<tr class="ctitle"><td id="chapter_t">标题:</td><td><input type="text"></input></td></tr>
-			<tr class="ccont"><td id="chapter_c">内容: </td><td><textarea rows="10" cols="100"></textarea></td></tr>
+			<tr class="ccont"><td id="chapter_c">内容: </td><td><textarea rows="10" cols="80"></textarea></td></tr>
 			<tr><td><input class="chap_up" type="button" value="上移"></input>&nbsp<input class="chap_down" type="button" value="下移"></input></td><td><input class="chap_add" type="button" value="增加" onclick="editPage.addChapter(0);"></input>&nbsp<input class="chap_del" type="button" value="删除" onclick="editPage.delChapter(0);"></input></td></tr>
 			<tr><td></br></td></tr>
 			</table>
