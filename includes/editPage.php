@@ -41,7 +41,7 @@ switch ($type){
 			<hr/>
 			<br/>
 			<table>
-			<tr><td>上传pdf文件</td></tr>
+			<tr><td><form enctype="multipart/form-data" action="uploadPaper.php" method="post"><label for="file">请上传文章原文件</label><input type="file" name="file" size="40" /><br /><input type="submit" name="submit" value="确定" /></form></br></td></tr>
 			</table>
 			<hr/>
 			<br/>
