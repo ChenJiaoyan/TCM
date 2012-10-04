@@ -9,6 +9,31 @@ var editPage={
 			}	
 		});
 	},
+	giveupNew:function(){
+		//提示是否放弃	
+		this.newArticle();
+	},
+	editArticle:function($art_tit){
+		$.post(site + "/includes/editPage.php?action=editArticle",function(data){
+			if(data=="fasle"){
+				alert("加载表单失败!");
+			}else{
+				$("#content2").html(data);
+			}	
+		});
+	},
+	editChapter:function($art_tit,$cha_num){
+		$.post(site + "/includes/editPage.php?action=editChapter",function(data){
+			if(data=="fasle"){
+				alert("加载表单失败!");
+			}else{
+				$("#content2").html(data);
+			}	
+		});
+	},
+	giveupEdit:function(){
+		//重新读出文章
+	},
 	addAuthor:function(){
 		var len=$(".authorl").length;
 		var str = "作者"+(len+1);
@@ -75,5 +100,12 @@ var editPage={
 			var str3 = "editPage.addChapter("+i+")";
 			$(".chap_add").eq(i).attr("onclick",str3);
 		}
+	},
+};
+var dbAction={
+	saveArticle:function(tag){
+		alert(tag);
+	},
+	saveChapter:function(){
 	},
 };
