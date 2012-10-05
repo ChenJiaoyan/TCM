@@ -9,7 +9,7 @@
 	<div class="border"></div>
  <!--   	<a href="javascript:parentAccordion.pr(1)">Exand All</a> | <a href="javascript:parentAccordion.pr(-1)">Collapse All</a>
 -->
-	<?php include_once(dirname(__FILE__)."/../includes/sidebar.php")?>
+	<?php include_once(dirname(__FILE__)."/../includes/sidebar_view.php")?>
     </div>
     
     <div id="content">

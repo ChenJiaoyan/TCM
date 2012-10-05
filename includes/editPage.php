@@ -41,18 +41,18 @@ switch ($type){
 			<hr/>
 			<br/>
 			<table id="edit_button">
-			<tr><td><input type="button" value="保存至草稿箱" onclick="dbAction.saveArticle(0)"></input><input type="button" value="保存并发布" onclick="dbAction.saveArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveupNew()"></input></td></tr>
+			<tr><td><input type="button" value="保存至草稿箱" onclick="dbAction.saveArticle(0)"></input><input type="button" value="保存并发布" onclick="dbAction.saveArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveup()"></input></td></tr>
 			</table>';
 		break;
 	case "editArticle";
 //读出内容，显示
-		$tag=0;
+		$tag=1;
 		if($tag==0){
 			$content= '<table id="article">
 				<tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text"></input><span>草稿</span></td></tr>';
 		}else{
 			$content= '<table id="article">
-				<tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text"></input><span>已经发布</span></td></tr>';
+				<tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text"></input><span>已发布</span></td></tr>';
 		}
 		$content .= '<tr id="acategory"><td class="lab_title">文章分类: </td><td><select><option value="Category1">医生</option><option value="Category2">患者</option><option value="Category3">机构</option></select></td></tr>
 			<tr id="adate"><td class="lab_title">完成日期: </td><td><input type="text" id="year"></input>年<input type="text" id="month"></input>月<input type="text" id="day"></input>日</td></tr>
@@ -88,10 +88,10 @@ switch ($type){
 			<br/>
 			<table id="edit_button">';
 			if($tag==0){	
-				$content .= '<tr><td><input type="button" value="保存至草稿箱" onclick="dbAction.saveArticle(0)"></input><input type="button" value="保存并发布" onclick="dbAction.saveArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveupEdit()"></input></td></tr>
+				$content .= '<tr><td><input type="button" value="保存至草稿箱" onclick="dbAction.saveArticle(0)"></input><input type="button" value="保存并发布" onclick="dbAction.saveArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveup()"></input></td></tr>
 				</table>';
 			}else{
-				$content .= '<tr><td><input type="button" value="保存" onclick="dbAction.saveArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveupEdit()"></input></td></tr>
+				$content .= '<tr><td><input type="button" value="保存" onclick="dbAction.saveArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveup()"></input></td></tr>
 				</table>';
 			}
 			echo $content;

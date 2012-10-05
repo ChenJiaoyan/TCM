@@ -9,10 +9,6 @@ var editPage={
 			}	
 		});
 	},
-	giveupNew:function(){
-		//提示是否放弃	
-		this.newArticle();
-	},
 	editArticle:function($art_tit){
 		$.post(site + "/includes/editPage.php?action=editArticle",function(data){
 			if(data=="fasle"){
@@ -31,8 +27,12 @@ var editPage={
 			}	
 		});
 	},
-	giveupEdit:function(){
+	giveup:function(){
 		//重新读出文章
+		tag = confirm("您确定放弃吗？");
+		if(tag){
+			$("#content2").html('<div id="edit_mess"><p style="font-size:20px;">欢迎编辑您的文章!</p><br/><p>选择左侧导航编辑您已有文章!</p><p><a href="javascript:editPage.newArticle()">增加新文章</a></p></div>');
+		}
 	},
 	addAuthor:function(){
 		var len=$(".authorl").length;
