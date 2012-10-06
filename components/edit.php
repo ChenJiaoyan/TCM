@@ -1,8 +1,7 @@
   <div id="mainContent">
     <div id="status">
-    	<span>您正在编辑文章</span>&nbsp&nbsp|&nbsp&nbsp
-	<a href="">第一篇文章</a>   
-	<a href="">第一章</a>    
+    	<span id="sta_label">您正在编辑: </span>&nbsp&nbsp
+	<span id="sta_content">第一篇文章 | 第一章</span>    
     </div>
     <div id="sidebar">
 	<div class="border"></div>

@@ -5,7 +5,15 @@ var editPage={
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{
-				$("#content2").html(data);
+				if($("#edit_mess").html()!=null){
+					$("#content2").html(data);
+					$("#sta_content").html("新文章");
+				}else{
+					if(confirm("您确定放弃吗？")){
+						$("#content2").html(data);
+						$("#sta_content").html("新文章");
+					}
+				}
 			}	
 		});
 	},
@@ -14,7 +22,15 @@ var editPage={
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{
-				$("#content2").html(data);
+				if($("#edit_mess").html()!=null){
+					$("#content2").html(data);
+					$("#sta_content").html(art_tit);
+				}else{
+					if(confirm("您确定放弃吗？")){
+						$("#content2").html(data);
+						$("#sta_content").html(art_tit);
+					}
+				}
 			}	
 		});
 	},
@@ -23,7 +39,15 @@ var editPage={
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{
-				$("#content2").html(data);
+				if($("#edit_mess").html()!=null){
+					$("#content2").html(data);
+					$("#sta_content").html(art_tit+" | 第"+cha_num+"章");
+				}else{
+					if(confirm("您确定放弃吗？")){
+						$("#content2").html(data);
+						$("#sta_content").html(art_tit+" | 第"+cha_num+"章");
+					}
+				}
 			}	
 		});
 	},
