@@ -9,8 +9,8 @@ var editPage={
 			}	
 		});
 	},
-	editArticle:function($art_tit){
-		$.post(site + "/includes/editPage.php?action=editArticle&art_tit=xxx",function(data){
+	editArticle:function(art_tit){
+		$.post(site + "/includes/editPage.php?action=editArticle&art_tit="+art_tit,function(data){
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{
@@ -18,8 +18,8 @@ var editPage={
 			}	
 		});
 	},
-	editChapter:function($art_tit,$cha_num){
-		$.post(site + "/includes/editPage.php?action=editChapter&?art_tit=xxx&cha_num=xxx",function(data){
+	editChapter:function(art_tit,cha_num){
+		$.post(site + "/includes/editPage.php?action=editChapter&art_tit="+art_tit+"&cha_num="+cha_num,function(data){
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{

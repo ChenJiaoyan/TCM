@@ -46,13 +46,15 @@ switch ($type){
 		break;
 	case "editArticle";
 //读出内容，显示
-		$tag=1;
-		if($tag==0){
+		$art_tit=$_REQUEST["art_tit"];
+		$art_id=0;
+		$published=1;
+		if($published==0){
 			$content= '<table id="article">
-				<tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text"></input><span>草稿</span></td></tr>';
+				<tr><td>文章编号：</td><td>'.$art_id.'<span>&nbsp&nbsp(草稿)</span></td></tr><tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text" value="'.$art_tit.'"></input></td></tr>';
 		}else{
 			$content= '<table id="article">
-				<tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text"></input><span>已发布</span></td></tr>';
+				<tr><td>文章编号：</td><td>'.$art_id.'<span>&nbsp&nbsp(已发布)</span></td></tr><tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text" value="'.$art_tit.'"></input></td></tr>';
 		}
 		$content .= '<tr id="acategory"><td class="lab_title">文章分类: </td><td><select><option value="Category1">医生</option><option value="Category2">患者</option><option value="Category3">机构</option></select></td></tr>
 			<tr id="adate"><td class="lab_title">完成日期: </td><td><input type="text" id="year"></input>年<input type="text" id="month"></input>月<input type="text" id="day"></input>日</td></tr>
@@ -87,7 +89,7 @@ switch ($type){
 			<hr/>
 			<br/>
 			<table id="edit_button">';
-			if($tag==0){	
+			if($published==0){	
 				$content .= '<tr><td><input type="button" value="保存至草稿箱" onclick="dbAction.saveArticle(0)"></input><input type="button" value="保存并发布" onclick="dbAction.saveArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveup()"></input></td></tr>
 				</table>';
 			}else{
@@ -98,19 +100,21 @@ switch ($type){
 		break;
 	case "editChapter";
 //读出内容，显示
-		$tag=1;
-		if($tag==0){
+		$art_tit=$_REQUEST["art_tit"];
+		$cha_num=$_REQUEST["cha_num"];
+		$art_id=0;
+		$published=1;
+		if($published==0){
 			$content= '<table id="article">
-				<tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text"></input><span>草稿</span></td></tr></table>';
+				<tr><td>文章编号：</td><td>'.$art_id.'<span>&nbsp&nbsp(草稿)</span></td></tr><tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text" readonly="readonly" value="'.$art_tit.'"></input></td></tr></table>';
 		}else{
 			$content= '<table id="article">
-				<tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text"></input><span>已发布</span></td></tr></table>';
+				<tr><td>文章编号：</td><td>'.$art_id.'<span>&nbsp&nbsp(已发布)</span></td></tr><tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text" readonly="readonly" value="'.$art_tit.'"></input></td></tr></table>';
 		}
 		$content .= '
 				<hr/>
-				<br/>
 				<table id="chapter">
-				<tr class="cnum"><td class="tag_ch">第1章</td></tr>
+				<tr class="cnum"><td class="tag_ch">第'.$cha_num.'章</td></tr>
 				<tr class="ctitle"><td id="chapter_t">标题:</td><td><input type="text"></input></td></tr>
 				<tr class="ccont"><td id="chapter_c">内容: </td><td><textarea rows="10" cols="80"></textarea></td></tr>
 				<tr><td></br></td></tr>
