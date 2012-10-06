@@ -10,7 +10,7 @@ var editPage={
 		});
 	},
 	editArticle:function($art_tit){
-		$.post(site + "/includes/editPage.php?action=editArticle",function(data){
+		$.post(site + "/includes/editPage.php?action=editArticle&art_tit=xxx",function(data){
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{
@@ -19,7 +19,7 @@ var editPage={
 		});
 	},
 	editChapter:function($art_tit,$cha_num){
-		$.post(site + "/includes/editPage.php?action=editChapter",function(data){
+		$.post(site + "/includes/editPage.php?action=editChapter&?art_tit=xxx&cha_num=xxx",function(data){
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{

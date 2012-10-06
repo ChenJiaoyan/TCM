@@ -98,6 +98,27 @@ switch ($type){
 		break;
 	case "editChapter";
 //读出内容，显示
+		$tag=1;
+		if($tag==0){
+			$content= '<table id="article">
+				<tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text"></input><span>草稿</span></td></tr></table>';
+		}else{
+			$content= '<table id="article">
+				<tr id="atitle"><td class="lab_title">文章题目: </td><td><input type="text"></input><span>已发布</span></td></tr></table>';
+		}
+		$content .= '
+				<hr/>
+				<br/>
+				<table id="chapter">
+				<tr class="cnum"><td class="tag_ch">第1章</td></tr>
+				<tr class="ctitle"><td id="chapter_t">标题:</td><td><input type="text"></input></td></tr>
+				<tr class="ccont"><td id="chapter_c">内容: </td><td><textarea rows="10" cols="80"></textarea></td></tr>
+				<tr><td></br></td></tr>
+				</table>
+				<table id="edit_button">';
+		$content .= '<tr><td><input type="button" value="保存" onclick="dbAction.saveArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveup()"></input></td></tr>
+			</table>';
+		echo $content;
 		break;
 }
 ?>
