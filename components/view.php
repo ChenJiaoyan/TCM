@@ -12,6 +12,7 @@
   -->
 	<?php include_once(dirname(__FILE__)."/../includes/sidebarLeft.php")?>
 </div>
+
     
 <div id="content">
 	<div class="border"></div>

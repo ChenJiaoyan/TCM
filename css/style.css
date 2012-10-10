@@ -6,6 +6,7 @@ code {font-family:"Courier New",Courier}
 #options a:hover {color:#033}
 
 #acc {width:171px; list-style:none; color:#033; margin:0 auto 40px}
+#acc a {text-decoration: none;}
 #acc h3 {display:block;width:171px;height:29px;  padding-left:5px; font-size:16px; line-height:28px;margin-top:5px; cursor:pointer;color:#fff; background:#9C6 url(../images/libg1.jpg) 160px 11px no-repeat}
 #acc h3:hover {background:#006633 url(../images/libg2.jpg) 160px 11px no-repeat}
 .acc-red-selected{background:#006633 url(../images/libg2.jpg) 160px 11px no-repeat !important;}
@@ -26,6 +27,7 @@ code {font-family:"Courier New",Courier}
 /*--liuna--*/
 #footer table td{vertical-align:middle; text-align:center}
 
+
 /*¹Ø¼ü×Ö*/
 #keyWords ul {list-style-type:none}
 #keyWordsTable #keyWordsAttri{ border: 1px solid blue;}
@@ -38,4 +40,4 @@ table,th, td
   {
   border: 1px solid black;
   }
- 
+

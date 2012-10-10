@@ -1,26 +1,28 @@
   <div id="mainContent">
     <div id="status">
-    	<span>您正在编辑文章</span>&nbsp&nbsp|&nbsp&nbsp
-	<a href="">第一篇文章</a>  >> 
-	<a href="">第一章</a>    
+    	<span id="sta_label">您正在编辑: </span>&nbsp&nbsp
+	<span id="sta_content"></span>    
     </div>
     <div id="sidebarLeft">
 	<div class="border"></div>
  <!--   	<a href="javascript:parentAccordion.pr(1)">Exand All</a> | <a href="javascript:parentAccordion.pr(-1)">Collapse All</a>
 -->
-	<?php include_once(dirname(__FILE__)."/../includes/sidebarLeft.php")?>
+
+	<?php include_once(dirname(__FILE__)."/../includes/sidebar_edit.php")?>
     	
     <span><a href="javascript:editPage.newArticle()">增加新文章</a></span>
     </div>
     <div id="editContent">
 	<div class="border"></div>
 	<div id="content2">
+	<form class="edit_form">
 	<div id="edit_mess">
 	<p style="font-size:20px;">欢迎编辑您的文章!</p>
 	<br/>
 	<p>选择左侧导航编辑您已有文章!</p>
 	<p><a href="javascript:editPage.newArticle()">增加新文章</a></p>
 	</div>
+	</form>
 	</div>
     </div>
   </div>

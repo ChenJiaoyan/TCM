@@ -1,13 +1,82 @@
 var site = "http://localhost/TCM";
+
+$(document).ready(function(){
+        $(".edit_form").data("changed",false);
+});
+
+
+
+function isDate(){
+	var tag = true;
+	 var str = $("#art_date").val();
+	 var a = str.match(/^(\d{0,4})-(\d{0,2})-(\d{0,2})$/);
+	 if (a == null){
+	 	tag = false;
+	 }else if ( a[2]>=13 || a[3]>=32 || a[4]>=24){
+	 	tag = false;
+	 }
+	 if(!tag){
+	 	$("#art_date_error").html("&nbsp&nbsp(时间格式有误)");
+	 }
+}
+
+
 var editPage={
+	replace:function(data,sta_mes){
+		var tag = true;;
+		if($(".edit_form").data("changed")){
+			if(!confirm("您确定放弃吗？")){
+				tag=false;
+			}
+		}
+		if(tag){
+			$(".edit_form").html(data);
+               		$(".edit_form").data("changed",false);
+        		$(".edit_form :input").change(function(){
+               			$(".edit_form").data("changed",true);
+        		});
+			$("#sta_content").html(sta_mes);
+		}
+	},
 	newArticle:function(){
 		$.post(site + "/includes/editPage.php?action=newArticle",function(data){
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{
-				$("#content2").html(data);
+				editPage.replace(data,'新文章');	
 			}	
 		});
+	},
+	editArticle:function(art_tit){
+		$.post(site + "/includes/editPage.php?action=editArticle&art_tit="+art_tit,function(data){
+			if(data=="fasle"){
+				alert("加载表单失败!");
+			}else{
+				editPage.replace(data,art_tit);	
+			}	
+		});
+	},
+	editChapter:function(art_tit,cha_num){
+		$.post(site + "/includes/editPage.php?action=editChapter&art_tit="+art_tit+"&cha_num="+cha_num,function(data){
+			if(data=="fasle"){
+				alert("加载表单失败!");
+			}else{
+				editPage.replace(data,art_tit+" | 第"+cha_num+"章");	
+			}	
+		});
+	},
+	giveup:function(){
+		//重新读出文章
+		var tag = true;
+		if($(".edit_form").data("changed")){
+			if(!confirm("您确定放弃吗？")){
+				tag = false;
+			}
+		}
+		if(tag){
+			$(".edit_form").html('<div id="edit_mess"><p style="font-size:20px;">欢迎编辑您的文章!</p><br/><p>选择左侧导航编辑您已有文章!</p><p><a href="javascript:editPage.newArticle()">增加新文章</a></p></div>');
+			$(".edit_form").data("changed",false);
+		}
 	},
 	addAuthor:function(){
 		var len=$(".authorl").length;
@@ -48,7 +117,7 @@ var editPage={
 	},
 	addChapter:function(index){
 		var str="第"+(index+2)+"章";
-		var tr = '<tr class="cnum"><td class="tag_ch">'+ str +'</td></tr><tr class="ctitle"><td id="chapter_t">标题:</td><td><input type="text"></input></td></tr><tr class="ccont"><td id="chapter_c">内容: </td><td><textarea rows="10" cols="100"></textarea></td></tr><tr><td><input class="chap_up" type="button" value="上移"></input>&nbsp<input class="chap_down" type="button" value="下移"></input></td><td><input class="chap_add" type="button" value="增加" onclick="editPage.addChapter(' + (index+1) + ');"></input>&nbsp<input class="chap_del" type="button" value="删除" onclick="editPage.delChapter(' + (index+1) + ');"></input></td></tr><tr><td></br></td></tr>';
+		var tr = '<tr class="cnum"><td class="tag_ch">'+ str +'</td></tr><tr class="ctitle"><td id="chapter_t">标题:</td><td><input type="text"></input></td></tr><tr class="ccont"><td id="chapter_c">内容: </td><td><textarea rows="10" cols="80"></textarea></td></tr><tr><td><input class="chap_up" type="button" value="上移"></input>&nbsp<input class="chap_down" type="button" value="下移"></input></td><td><input class="chap_add" type="button" value="增加" onclick="editPage.addChapter(' + (index+1) + ');"></input>&nbsp<input class="chap_del" type="button" value="删除" onclick="editPage.delChapter(' + (index+1) + ');"></input></td></tr><tr><td></br></td></tr>';
 		$("#chapter").children().children().eq(index*5+4).after(tr);
 		var len=$(".cnum").length;
 		var i;
@@ -75,5 +144,17 @@ var editPage={
 			var str3 = "editPage.addChapter("+i+")";
 			$(".chap_add").eq(i).attr("onclick",str3);
 		}
+	},
+};
+var dbAction={
+	saveArticle:function(published){
+		var art_title = $("#atitle input").val();
+		var art_categroy = $("#acategory select").val();
+		var art_date = $("#adate input").val();
+		var art_abstract = $("#abstract textarea").val();
+	//	$(".authorl input:eq(3)").val()
+		alert(published);
+	},
+	saveChapter:function(){
 	},
 };
