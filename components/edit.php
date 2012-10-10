@@ -4,15 +4,15 @@
 	<a href="">第一篇文章</a>  >> 
 	<a href="">第一章</a>    
     </div>
-    <div id="sidebar">
+    <div id="sidebarLeft">
 	<div class="border"></div>
  <!--   	<a href="javascript:parentAccordion.pr(1)">Exand All</a> | <a href="javascript:parentAccordion.pr(-1)">Collapse All</a>
 -->
-	<?php include_once(dirname(__FILE__)."/../includes/sidebar.php")?>
+	<?php include_once(dirname(__FILE__)."/../includes/sidebarLeft.php")?>
     	
     <span><a href="javascript:editPage.newArticle()">增加新文章</a></span>
     </div>
-    <div id="content">
+    <div id="editContent">
 	<div class="border"></div>
 	<div id="content2">
 	<div id="edit_mess">

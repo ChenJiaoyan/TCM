@@ -25,3 +25,17 @@ code {font-family:"Courier New",Courier}
 #nested .acc-selected {background:url(../images/header_over.gif)}
 /*--liuna--*/
 #footer table td{vertical-align:middle; text-align:center}
+
+/*¹Ø¼ü×Ö*/
+#keyWords ul {list-style-type:none}
+#keyWordsTable #keyWordsAttri{ border: 1px solid blue;}
+ table
+  {
+  border-collapse:collapse;
+  }
+
+table,th, td
+  {
+  border: 1px solid black;
+  }
+ 
