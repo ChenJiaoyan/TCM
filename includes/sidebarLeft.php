@@ -7,12 +7,12 @@ echo '<ul class="acc" id="acc">
     	 <div class="acc-content">
     	 <ul class="acc" id="nested">
     	 	<li>
-    	 	<h4><a href="">第一章</a></h4>
+    	 	<h4><a href="#P1">第一章</a></h4>
     	 	<div class="acc-section">
     	 	<div>
     	 	</li>
     	 	<li>
-    	 	<h4><a href="">第二章</a></h4>
+    	 	<h4><a href="#P2">第二章</a></h4>
     	 	<div class="acc-section">
     	 	<div class="acc-content">
     	 	<div>

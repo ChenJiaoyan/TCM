@@ -90,10 +90,10 @@ switch ($type){
 			<br/>
 			<table id="edit_button">';
 			if($published==0){	
-				$content .= '<tr><td><input type="button" value="保存至草稿箱" onclick="dbAction.saveArticle(0)"></input><input type="button" value="保存并发布" onclick="dbAction.saveArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveup()"></input></td></tr>
+				$content .= '<tr><td><input type="button" value="保存至草稿箱" onclick="dbAction.editArticle(0)"></input><input type="button" value="保存并发布" onclick="dbAction.editArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveup()"></input></td></tr>
 				</table>';
 			}else{
-				$content .= '<tr><td><input type="button" value="保存" onclick="dbAction.saveArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveup()"></input></td></tr>
+				$content .= '<tr><td><input type="button" value="保存" onclick="dbAction.editArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveup()"></input></td></tr>
 				</table>';
 			}
 			echo $content;
@@ -120,7 +120,7 @@ switch ($type){
 				<tr><td></br></td></tr>
 				</table>
 				<table id="edit_button">';
-		$content .= '<tr><td><input type="button" value="保存" onclick="dbAction.saveArticle(1)"></input><input type="button" value="放弃" onclick="editPage.giveup()"></input></td></tr>
+		$content .= '<tr><td><input type="button" value="保存" onclick="dbAction.saveChapter(1)"></input><input type="button" value="放弃" onclick="editPage.giveup()"></input></td></tr>
 			</table>';
 		echo $content;
 		break;

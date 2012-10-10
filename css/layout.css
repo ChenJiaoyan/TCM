@@ -14,6 +14,7 @@ body { font-family:Verdana; font-size:14px; margin:0;}
 #header #searchbox #optionSearch{ height:24px;margin-left:4px;margin-right:4px;color:green;}
 #header #searchbox #search_submit{ background:#2276AF; font-size:15px; font-weight:bold;text-shadow:1px 1px 1px #2276AF;color:white;text-align:center;padding: 2px 5px 5px 5px;}
 #header #utility {float:right;margin-right:35px;margin-top:3px;}
+
 #menu { width:100%;height:35px; background:url(../images/menu_back.png); margin-bottom:5px; overflow:hidden; }
 #menu ul {list-style:none; height:35px;line-height:35px;padding:0 8px 1px;border-radius:30px;box-shadow:0 1px 3px rgba(0;0,0,0,4);}
 #menu ul li{display:inline-block;margin:0.5px;}
@@ -22,23 +23,38 @@ body { font-family:Verdana; font-size:14px; margin:0;}
 #menu #menu_cat{float:left;}
 #menu #menu_action{float:right;}
 #menu #menu_action li a{float:right;font-size:13px;}
+
 #mainContent {margin-bottom:5px;width:100%;}
 #mainContent .border{width:100%;height:10px;background:url(../images/border.gif);}
 #mainContent #status{height:23px;width:95%;position:relative;padding:0 20px;top:2px;}
 #mainContent #status a{font-size:15px;}
 #mainContent #status span{font-size:15px;}
 #mainContent #content {position:relative;}
-#sidebar { float:left; width:15%;background:#fff;}
-#sidebar span{ float:right; margin-right:10px;}
-#content { float:left; width:57%; background:#ffa; background:white;}
-#content #content2{padding: 5px 15px 5px 15px;border-left-color: #DDDDDD;border-left-style: groove;border-left-width: 5px;border-right-color: #DDDDDD;border-right-style:double;border-right-width: 4px;}
+
+/*左侧栏*/
+#sidebarLeft { float:left; width:15%;background:#fff;}
+#sidebarLeft span{ float:right; margin-right:10px;}
+
+/*中间内容*/
+#content { float:left; width:60%; background:#ffa; background:white;}
+#content #content2{padding: 5px 25px 5px 15px;border-left-color: #DDDDDD;border-left-style: groove;border-left-width: 5px;border-right-color: #DDDDDD;border-right-style:double;border-right-width: 5px;}
 #content #content2 #edit_mess{margin-top:50px;margin-left:50px;height:200px;}
-#sidebar2 {float:left; width:28%;background:#fff;}
-#sidebar2 #side2Content{float:left;width:260px;margin-top: 40px ;margin-bottom:5px ;margin-left:15px;border-style: dotted; border-width: 1px;padding:5px 10px 5px 10px;}
+
+/*右侧栏*/
+#sidebarRight {float:left; width:25%;background:#fff;}
+/*原来width=260px*/
+#sidebarRight #sideRightContent{float:left;width:78%;margin-top: 40px ;margin-bottom:5px ;margin-left:15px;border-style: dotted; border-width: 1px;padding:5px 10px 5px 10px;}
 .clearfloat {clear:both}
+
+/*编辑内容*/
+#editContent { float:left; width:75%; background:#ffa; background:white;}
+#editContent #content2{padding: 5px 15px 5px 15px;border-left-color: #DDDDDD;border-left-style: groove;border-left-width: 5px;border-right-color: #DDDDDD;border-right-style:groove;border-right-width: 5px;}
+#editContent #content2 #edit_mess{margin-top:50px;margin-left:50px;height:200px;}
+
+/*底端*/
 #footer { height:45px; background:url(../images/menu_back.png);}
 
-
+/*编辑文章的表格*/
 #article {width:80%;}
 #article .lab_title {width:80px;}
 #article #atitle input{width:90%;}
@@ -67,3 +83,10 @@ body { font-family:Verdana; font-size:14px; margin:0;}
 #chapter .ctitle #chapter_c{width:80px;}
 
 #edit_button input{margin-right:10px;}
+
+/*关键字*/
+
+#keyWords {float:left;width:100%;}
+.clearfloat {clear:both}
+#keyWords ul li{list-style-type:none; float:left; margin:2px 3px 2px 2px;}
+#keyWordsTable { float:left;margin-top:5px;}
