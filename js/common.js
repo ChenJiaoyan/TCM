@@ -5,12 +5,10 @@ jychen(document).ready(function(){
         jychen(".edit_form").data("changed",false);
 });
 
-
-
 function isDate(){
 	var tag = true;
 	 var str = jychen("#art_date").val();
-	 var a = str.match(/^(\d{0,4})-(\d{0,2})-(\d{0,2})jychen/);
+	 var a = str.match(/^(\d{0,4})-(\d{0,2})-(\d{0,2})$/);
 	 if (a == null){
 	 	tag = false;
 	 }else if ( a[2]>=13 || a[3]>=32 || a[4]>=24){
@@ -20,7 +18,6 @@ function isDate(){
 	 	jychen("#art_date_error").html("&nbsp&nbsp(时间格式有误)");
 	 }
 }
-
 
 var editPage={
 	replace:function(data,sta_mes){
@@ -44,25 +41,26 @@ var editPage={
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{
-				editPage.replace(data,'新文章');	
-			}	
+				editPage.replace(data,'新文章');
+			}
 		});
 	},
-	editArticle:function(art_tit){
-		jychen.post(site + "/includes/editPage.php?action=editArticle&art_tit="+art_tit,function(data){
+	editArticle:function(articleID){
+		jychen.post(site + "/includes/editPage.php?action=editArticle&articleID="+articleID,function(data){
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{
-				editPage.replace(data,art_tit);	
+				editPage.replace(data,articleID);	
 			}	
 		});
 	},
-	editChapter:function(art_tit,cha_num){
-		jychen.post(site + "/includes/editPage.php?action=editChapter&art_tit="+art_tit+"&cha_num="+cha_num,function(data){
+	editChapter:function(articleID,chapterRank){
+		jychen.post(site + "/includes/editPage.php?action=editChapter&articleID="+articleID+"&chapterRank="+chapterRank, function(data){
 			if(data=="fasle"){
 				alert("加载表单失败!");
 			}else{
-				editPage.replace(data,art_tit+" | 第"+cha_num+"章");	
+//				alert(data);
+				editPage.replace(data,articleID+" | 第"+chapterRank+"章");	
 			}	
 		});
 	},
@@ -94,10 +92,8 @@ var editPage={
 			var str = "作者"+(i+1);
 			jychen(".lab_a").eq(i).html(str);
 			var str2 = "editPage.delAuthor("+i+")";
-			jychen(".authord").eq(i).attr("onclick",str2);
-			
+			jychen(".authord").eq(i).attr("onclick",str2);	
 		}
-		
 	},
 	addKey:function(){
 		var len=jychen(".keyl").length;
@@ -149,17 +145,149 @@ var editPage={
 };
 var dbAction={
 //增加新文章的时候调用这个函数
-	saveArticle:function(published){
-		var art_title = jychen("#atitle input").val();
-		var art_categroy = jychen("#acategory select").val();
-		var art_date = jychen("#adate input").val();
-		var art_abstract = jychen("#abstract textarea").val();
-	//	jychen(".authorl input:eq(3)").val()
-		alert(published);
+	saveArticle:function(ln_published){
+		var ln_title = jychen("#atitle input").val();
+		var ln_categroy = jychen("#acategory select").val();
+		var ln_createtime = jychen("#adate input").val();
+		var ln_art_abstract = jychen("#abstract textarea").val();
+		
+		var ln_authorNum = jychen("#author .authorl").size();	//获取作者信息
+		var authorArray = {};
+		for(var i=1; i<=ln_authorNum; i++)
+		{
+			authorArray["name"+i] = jychen("#author .authorl:eq("+(i-1)+") input:eq(0)").val();
+			authorArray["mail"+i] = jychen("#author .authorl:eq("+(i-1)+") input:eq(1)").val();
+			authorArray["rank"+i] = i;
+		}
+		
+		var ln_chapterNum = jychen("#chapter .cnum").size();	//获取章节信息
+		var chapterArray = {};
+		for(var i=1; i<=ln_chapterNum; i++)
+		{
+			chapterArray["chaTitle"+i] = jychen("#chapter .ctitle:eq("+(i-1)+") input").val();
+			chapterArray["chaContent"+i] = jychen("#chapter .ccont:eq("+(i-1)+") textarea").val();
+			chapterArray["chaRank"+i] = i;
+		}
+		
+		var ln_keyNum = jychen("#key .keyl").size();	//获取关键字信息
+		var keyArray = {};
+		for(var i=1; i<=ln_keyNum; i++)
+		{
+			keyArray["keyValue"+i] = jychen("#key .keyl:eq("+(i-1)+") input:eq(0)").val();
+			keyArray["keyRank"+i] = i;
+		}
+		
+		var url = site + "/includes/saveArticleInfo.php";
+		var str_all = {type:"all",title:ln_title,category:ln_categroy,createtime:ln_createtime,art_abstract:ln_art_abstract,published:ln_published};
+				
+		str_all["authorNum"] = ln_authorNum;
+		for(var i=1; i<=ln_authorNum; i++)
+		{
+			str_all["name"+i] = authorArray["name"+i];
+			str_all["mail"+i] = authorArray["mail"+i];
+			str_all["rank"+i] = authorArray["rank"+i];
+		}
+		
+		str_all["chapterNum"] = ln_chapterNum;
+		for(var i=1; i<=ln_chapterNum; i++)
+		{
+			str_all["chaTitle"+i] = chapterArray["chaTitle"+i];
+			str_all["chaContent"+i] = chapterArray["chaContent"+i];
+			str_all["chaRank"+i] = chapterArray["chaRank"+i];
+		}
+		
+		str_all["keyNum"] = ln_keyNum;
+		for(var i=1; i<=ln_keyNum; i++)
+		{
+			str_all["keyValue"+i] = keyArray["keyValue"+i];
+			str_all["keyRank"+i] = keyArray["keyRank"+i];
+		}
+		jychen.post(url,str_all,function(result){
+			window.location.reload(); //刷新页面
+		});
+
 	},
-//编辑文章的时候调用
-	editChapter:function(){
+	
+	//更新文章的时候调用
+	updateChapter:function(ln_articleID,ln_chaRank)//更新单个章节
+	{
+		var ln_chaTitle = jychen("#chapter .ctitle input").val();
+		var ln_chaContent = jychen("#chapter .ccont textarea").val();
+
+		var url = site + "/includes/updateArticleInfo.php";
+		var str_chapter = {type:"chapter",articleID:ln_articleID,chaRank:ln_chaRank,chaTitle:ln_chaTitle,chaContent:ln_chaContent};
+		
+		jychen.post(url,str_chapter,function(result){
+//			alert(result);
+			window.location.reload(); //刷新页面
+		});	
 	},
-	editArticle:function(){
+	
+	updateArticle:function(ln_articleID,ln_published)//	更新整篇文章
+	{
+		var ln_title = jychen("#atitle input").val();
+		var ln_categroy = jychen("#acategory select").val();
+		var ln_createtime = jychen("#adate input").val();
+		var ln_art_abstract = jychen("#abstract textarea").val();
+		
+		var ln_authorNum = jychen("#author .authorl").size();	//获取作者信息
+		var authorArray = {};
+		for(var i=1; i<=ln_authorNum; i++)
+		{
+			authorArray["name"+i] = jychen("#author .authorl:eq("+(i-1)+") input:eq(0)").val();
+			authorArray["mail"+i] = jychen("#author .authorl:eq("+(i-1)+") input:eq(1)").val();
+			authorArray["rank"+i] = i;
+		}
+		
+		var ln_chapterNum = jychen("#chapter .cnum").size();	//获取章节信息
+		var chapterArray = {};
+		for(var i=1; i<=ln_chapterNum; i++)
+		{
+			chapterArray["chaTitle"+i] = jychen("#chapter .ctitle:eq("+(i-1)+") input").val();
+			chapterArray["chaContent"+i] = jychen("#chapter .ccont:eq("+(i-1)+") textarea").val();
+			chapterArray["chaRank"+i] = i;
+		}
+		
+		var ln_keyNum = jychen("#key .keyl").size();	//获取关键字信息
+		var keyArray = {};
+		for(var i=1; i<=ln_keyNum; i++)
+		{
+			keyArray["keyValue"+i] = jychen("#key .keyl:eq("+(i-1)+") input:eq(0)").val();
+			keyArray["keyRank"+i] = i;
+		}
+		
+		var url = site + "/includes/updateArticleInfo.php";
+		var str_all = {type:"all",title:ln_title,articleID:ln_articleID,category:ln_categroy,createtime:ln_createtime,art_abstract:ln_art_abstract,published:ln_published};
+				
+		str_all["authorNum"] = ln_authorNum;
+		for(var i=1; i<=ln_authorNum; i++)
+		{
+			str_all["name"+i] = authorArray["name"+i];
+			str_all["mail"+i] = authorArray["mail"+i];
+			str_all["rank"+i] = authorArray["rank"+i];
+		}
+		
+		str_all["chapterNum"] = ln_chapterNum;
+		for(var i=1; i<=ln_chapterNum; i++)
+		{
+			str_all["chaTitle"+i] = chapterArray["chaTitle"+i];
+			str_all["chaContent"+i] = chapterArray["chaContent"+i];
+			str_all["chaRank"+i] = chapterArray["chaRank"+i];
+		}
+		
+		str_all["keyNum"] = ln_keyNum;
+		for(var i=1; i<=ln_keyNum; i++)
+		{
+			str_all["keyValue"+i] = keyArray["keyValue"+i];
+			str_all["keyRank"+i] = keyArray["keyRank"+i];
+		}
+		jychen.post(url,str_all,function(result){
+//			alert(result);
+			window.location.reload(); //刷新页面
+		});	
 	},
 };
+
+
+
+

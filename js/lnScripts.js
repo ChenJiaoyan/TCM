@@ -1,5 +1,3 @@
-
-
 var ln=jQuery.noConflict();
 ln(document).ready(function()
 {
@@ -9,16 +7,15 @@ ln(document).ready(function()
 	 ln.get(url,{articleName:"",action:"all"},function(result){
 			if(result=="liuna")
 			{
-			
-			alert("获取全文失败");
-			//nextText();
+				alert("获取全文失败");
+				//nextText();
 			}
-		  else
-		  {
-			  result=result+'<span id="foldArticle"><a  href="#">收起全文</a></span></p><br/>';
-			ln("#lnContent").html(result);
-		  }
-	  });
+			else
+			{
+				result=result+'<span id="foldArticle"><a  href="#">收起全文</a></span></p><br/>';
+				ln("#lnContent").html(result);
+		}
+	});
   });
   //收起全文
    ln("#foldArticle").click(function(){
